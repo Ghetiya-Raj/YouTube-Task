@@ -1,13 +1,12 @@
 import { useState } from 'react'
-
-import './App.css'
+import RoutesProvider from './routes/RoutesProvider'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
    <div>
-
+    <RoutesProvider/>
 
    </div>
   )
