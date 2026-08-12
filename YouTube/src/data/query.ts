@@ -14,11 +14,22 @@ export function loginData(user: user) {
 }
 
 export function getVideoData() {
-  let key =  sessionStorage.getItem("accessToken")
+  let key = sessionStorage.getItem("accessToken");
   let res = axios.get("https://yt-assesment.onrender.com/api/v1/videos", {
     headers: {
-      Authorization: key,
+      Authorization: `Bearer ${key}`,
     },
   });
+  return res;
+}
+
+export function getUser() {
+  let key = sessionStorage.getItem("accessToken");
+  let res = axios.get("https://yt-assesment.onrender.com/api/v1/user/me", {
+    headers: {
+      Authorization: `Bearer ${key}`,
+    },
+  });
+
   return res;
 }

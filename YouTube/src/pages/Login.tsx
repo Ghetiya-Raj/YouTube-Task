@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { object, string } from "yup";
@@ -15,7 +15,8 @@ const Login = () => {
 
   const loginMutate = useLogin();
 
-  function handleopen() {
+  
+    function handleopen() {
     if (isOpen) {
       setType((c) => (c = "text"));
       setIcon((eye) => (eye = <FaEyeSlash />));
@@ -26,6 +27,8 @@ const Login = () => {
       setIsOpen(true);
     }
   }
+  
+  
 
   function handleSubmit(e:Event) {
     e.preventDefault();
@@ -34,9 +37,9 @@ const Login = () => {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    if(email=="" || password==""){
-      alert("Enter all the field value")
-    }
+    // if(email=="" || password==""){
+    //   alert("Enter all the field value")
+    // }
 
     const obj = {
       email,
@@ -57,6 +60,7 @@ const Login = () => {
               type="email"
               placeholder="Enter your email"
               name="email"
+              defaultValue="raj@techeniac.com"
               value={email}
               className="px-[10px] ml-auto  w-[100%] h-[40px] bg-slate-100 rounded-[10px]"
               onChange={(e) => setEmail(e.target.value)}
@@ -66,6 +70,7 @@ const Login = () => {
                 type={type}
                 placeholder="Enter your password"
                 name="password"
+                // defaultValue="TechEniac@123"
                 value={password}
                 className="px-[10px] ml-auto  w-[100%] h-[40px] bg-slate-100 rounded-[10px]"
                 onChange={(e) => setPassword(e.target.value)}
