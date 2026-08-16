@@ -1,17 +1,16 @@
-import { useState } from 'react'
-import RoutesProvider from './routes/RoutesProvider'
-import Card from './components/Card'
+import RoutesProvider from "./routes/RoutesProvider";
+// import { useRefreshToken } from "./hooks/useRefreshToken";
+
 
 
 function App() {
-  
+ 
 
   return (
-   <div>
-    <RoutesProvider/>
-   
-   </div>
-  )
+    <div>
+      <RoutesProvider />
+    </div>
+  );
 }
 
-export default App
+export default App;
