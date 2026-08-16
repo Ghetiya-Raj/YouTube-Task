@@ -1,6 +1,11 @@
-import React from "react";
+interface card{
+  title:string,
+  thumbnailKey:string,
+  owner:string,
+  viewCount:string
+}
 
-const card = ({title,thumbnailKey,owner,viewCount}) => {
+const Card = ({title,thumbnailKey,owner,viewCount}:card) => {
   return (
     <div className="">
       <div className="w-[340px] h-[360px] rounded-2xl">
@@ -31,4 +36,4 @@ const card = ({title,thumbnailKey,owner,viewCount}) => {
   );
 };
 
-export default card;
+export default Card;
